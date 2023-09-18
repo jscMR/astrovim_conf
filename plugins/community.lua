@@ -6,11 +6,17 @@ return {
 
   { import = "astrocommunity.colorscheme.nightfox-nvim", enabled = false },
   { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = false },
-  { import = "astrocommunity.colorscheme.rose-pine", enabled = true },
+  { import = "astrocommunity.colorscheme.rose-pine", enabled = false },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { -- further customize the options set by the community
     "catppuccin",
     opts = {
+      transparent_background = false,
+      flavour = "macchiato", -- latte, frappe, macchiato, mocha
+      background = { -- :h background
+          light = "latte",
+          dark = "mocha",
+      },
       integrations = {
         sandwich = false,
         noice = true,
