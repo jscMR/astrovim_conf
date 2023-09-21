@@ -18,12 +18,12 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin",
+  colorscheme = "everforest",
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "neanias/everforest-nvim",
+    name = "everforest",
     config = function()
-      require("catppuccin").setup {}
+      require("everforest").setup {}
     end,
   },
 
