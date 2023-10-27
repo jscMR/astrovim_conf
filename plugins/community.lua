@@ -7,6 +7,7 @@ return {
   { import = "astrocommunity.colorscheme.nightfox-nvim", enabled = false },
   { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = false },
   { import = "astrocommunity.colorscheme.rose-pine", enabled = false },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { -- further customize the options set by the community
     "catppuccin",

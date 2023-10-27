@@ -17,13 +17,12 @@ return {
     },
   },
 
-  -- Set colorscheme to use
-  colorscheme = "catppuccin",
+  colorscheme = "tokyonight",
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "tokyonight/nvim",
+    name = "tokyonight",
     config = function()
-      require("catppuccin").setup {}
+      require("tokyonight").setup {}
     end,
   },
 
