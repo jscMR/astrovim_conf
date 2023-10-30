@@ -17,8 +17,14 @@ return {
     },
   },
 
-  -- Set colorscheme to use
   colorscheme = "tokyonight",
+  {
+    "tokyonight/nvim",
+    name = "tokyonight",
+    config = function()
+      require("tokyonight").setup {}
+    end,
+  },
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {

@@ -12,6 +12,17 @@ return {
       -- null_ls.builtins.formatting.stylua,
       -- null_ls.builtins.formatting.prettier,
     }
+
+    config.handlers = {
+      eslint_d = function ()
+       require("null-ls").register(require("null-ls").builtins.diagnostics.eslint_d.with {
+              condition = function(utils)
+                return utils.root_has_file ".eslintrc.json"
+                  or utils.root_has_file ".eslintrc.js"
+              end, })
+      end
+    }
+    
     return config -- return final config table
   end,
 }
