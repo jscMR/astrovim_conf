@@ -33,6 +33,21 @@ return {
   },
 
   lsp = {
+    config = {
+      denols = function(opts)
+        opts.root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
+        return opts
+      end,
+      tsserver = function(opts)
+        opts.root_dir = require("lspconfig.util").root_pattern "package.json"
+        return opts
+      end,
+      -- For eslint:
+      -- eslint = function(opts)
+      --   opts.root_dir = require("lspconfig.util").root_pattern("package.json", ".eslintrc.json", ".eslintrc.js"),
+      --   return opts
+      -- end,
+    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
@@ -57,6 +72,25 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+    },
+    setup_handlers = {},
+  },
+
+  -- Plugins
+  plugins = {
+    "jose-elias-alvarez/typescript.nvim", -- add lsp plugin
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = { "tsserver" }, -- automatically install lsp
+      },
+    },
+    "sigmasd/deno-nvim", -- add lsp plugin
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = { "denols" }, -- automatically install lsp
+      },
     },
   },
 
